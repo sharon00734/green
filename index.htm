@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>台灣綠色莽原爭霸戰</title>
+
+<meta charset="UTF-8">
+<meta name="og:description" content="向大自然致敬！台灣最有大自然氛圍的校園？森林、綠地、空曠、野生動物！？到底獎落誰家，由你來揭曉！" />
+<meta property="og:title" content="台灣綠色莽原爭霸戰"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://hsiufeng.github.io/green/index.htm"/>
+<meta property="og:image" content="http://hsiufeng.github.io/green/school/14.jpg"/>
+<meta property="og:site_name" content="台灣綠色莽原爭霸戰" />
+
+<!-- Style Sheets -->
+<link href="assets/css/mainstyle_2.css" rel="stylesheet">  <!--背景-->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- JavaScript Sheets -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/parse-1.3.3.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="assets/js/jquery.flot.js"></script>
+<script type="text/javascript" src="assets/js/jquery.flot.pie.js"></script>
+<script type="text/javascript" src="assets/js/pie.js"></script>
+<script type="text/javascript" src="assets/js/vote.js"></script>
+</head>
+<body>
+
+<div class="container">
+   <div class="row">
+      <div class="head_title">
+         <img src="assets/img/title.png">
+      </div>
+      <div class='item' >
+         <a href='#' title='回頂端'><h5><span id='zhxing' class='anchor'>目前戰況</span></h5></a>
+         <table class='tg' style='margin-bottom: 30px;'>
+            <tbody class="tb"></tbody>
+         </table>
+         <script type="text/javascript">list();</script>
+         <div id="flot-placeholder"></div>
+      </div>
+    
+      <div class='item'>
+         <a href='#' title='回頂端'><h5><span id='xuanfu' class='anchor'>大學列表</span></h5></a>
+         <div class="school">
+            <div class='item-block'><a href="#">
+               <img src='school/1.jpg' /></a><span class='name'>No1.</span>
+               <div id='03'>
+               <p>國立屏東科技大學</p>
+               </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1">我要投票</button>
+         </div>
+         <!-- Modal -->
+         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">   
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                     <h4 class="modal-title" id="myModalLabel">您投的是屏東科技大學</h4>
+                  </div>
+                  <div class="modal-body">　　
+                     <img src='school/1.jpg' width=350 />
+                     <br/><br/>
+                     屏東科技大學位於屏東縣內埔鄉老埤村大武山麓，是一所景色怡人與人文聚集的
+                     大學院校。本校是全國校本部面積最大的學校，學校內有多樣的教學場所，除了室內
+                     教學實驗室之外，還有生態公園、水土保持示範區、植物園區等室外教學空間。其中
+                     ，植物園區內更有令人心曠神怡的森林步道區。 
+                  </div>
+                  <label>&nbsp;&nbsp;&nbsp;&nbsp; EMAIL &nbsp;&nbsp;<input type="mail" id="user_mail_1" value=""></label>
+                  <br/><br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 投票原因：
+                  <select name="what">
+                     <option value="one">我愛母校
+                     <option value="two">校園太美
+                     <option value="three">校地大
+                  </select>
+                  <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(1)">投出神聖一票</button>
+                  </div>
+               </div><!-- modal-content -->
+            </div><!-- modal-dialog -->
+         </div><!-- modal fade -->
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+               <img src='school/2.jpg' /></a><span class='name'>No.2</span>
+               <div id='04'>
+                  <p>國立東華大學</p>
+               </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是東華大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/2.jpg' width=350 />
+                  <br/>
+                  <br/>
+                  東華大學所在地花蓮，是美麗純潔的淨土、純樸人情的原鄉。大自然身世的孕育、山與海的呼喚、小鎮人們悠然自在的生活、以及各族群文化交疊激盪後產生的多元社會…讓久居城市的你我，帶著歸真反璞的心情，迎向太陽初昇的東方。
+                  </div>
+                  <label>
+                  &nbsp;&nbsp;&nbsp;&nbsp; EMAIL &nbsp;&nbsp;<input type="mail" id="user_mail_2" value=""></label><br />
+                  <br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 投票原因：
+                  <select name="what">
+                  <option value="one">我愛母校
+                  <option value="two">校園太美
+                  <option value="three">校地大
+                  </select>
+                  <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                                 data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(2)">
+                                 投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/3.jpg' /></a><span class='name'>No.3</span>
+            <div id='05'>
+            <p>國立成功大學</p>
+            </div>      
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">我要投票</button>
+         </div>
+   
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立成功大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/3.jpg' width=350 />
+         <br/>
+         <br/>
+         古西方的景致、超現代的樓層，新舊交替，中西輝映，成大為學子建構知識無國界的
+         新知識領域。校園裡樹蔭濃密，綠意綿延，展現了寬廣無拘的包容，吸引世界各地不
+         同的訪客來此探訪天地浩瀚、吸納知識的精華。
+                  </div>
+         <label>
+         &nbsp;&nbsp;&nbsp;&nbsp; EMAIL &nbsp;&nbsp;<input type="mail" id="user_mail_3" value=""></label><br />
+         <br/>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(3)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/4.jpg' /></a><span class='name'>No.4</span>
+            <div id='06'>
+            <p>國立暨南國際大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal4">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立暨南國際大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/4.jpg' width=350 />
+         <br/>
+         <br/>
+         民國八十四年國立暨南國際大學正式成立，座落於埔里通往日月潭的藝術大道旁，從入口蜿蜓而上，一片翠綠盡收眼簾，數棟中國風的建築融合於大自然中，融入水沙連的山水間。暨大擁有豐富的自然景觀，在這裡，晴空萬里時可以遠眺合歡山，朗朗無雲之夜可以觀星，甚至雨後可見清晰的彩虹。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_4" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(4)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/5.jpg' /></a><span class='name'>No.5</span>
+            <div id='07' >
+            <p>國立嘉義大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal5">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立嘉義大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/5.jpg' width=350 />
+         <br/>
+         <br/>
+         國立嘉義大學的誕生，滿足了地方人士期盼一所大學的宿願，也是臺灣高等教育大學校院整合成功的首例與典範，為雲嘉地區最具歷史與規模的綜合大學。學校歷史源遠流長，發展與成長的過程與90多年來臺灣經濟、社會、教育的需要與變遷息息相關，脈脈相連。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_5" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(5)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/6.JPG' /></a><span class='name'>No.6</span>
+            <div id='08' >
+            <p>國立臺北科技大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal6">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立臺北科技大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/6.JPG' width=350 />
+         <br/>
+         <br/>
+         國立臺北科技大學，其前身為台北工專，簡稱北科、北科大、臺北科大、Taipei Tech或NTUT，位於臺灣臺北市大安區，近臨捷運忠孝新生站，坐擁便利的交通與豐富的資源。 目前設有機電、電資、工程、管理、設計、人文與社會科學等六個學院，是一所綜合型的國立科技大學。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_6" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(6)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/7.jpg' /></a><span class='name'>No.7</span>
+            <div id='09' >
+            <p>國立中正大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal7">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal7" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立中正大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/7.jpg' width=350 />
+         <br/>
+         <br/>
+         為紀念已故的中華民國總統蔣中正及兼顧高等教育之南北平衡，首年度招收5所碩士班研究生。是2006~2013年獲得中華民國教育部補助「獎勵大學教學卓越計畫」的國立大學，更被網友們票選為全台灣最美麗的大學排名第一名。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_7" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(7)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/8.jpg' /></a><span class='name'>No.8</span>
+            <div id='10' >
+            <p>東海大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal8">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal8" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是東海大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/8.jpg' width=350 />
+         <br/>
+         <br/>
+         台灣一所基督教背景的著名綜­合大學，也是台灣第一所使用「大學」名稱的私立大學，座落於台中市西屯區大肚山山麓。­為延續傳承中華民國政府因內戰遷台前存在於中國大陸的13所教會大學，美國基督教聯董­會於1955年以在台復校名義創校。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_8" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(8)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/9.JPG' /></a><span class='name'>No.9</span>
+            <div id='11' >
+            <p>國立臺灣大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript: void(window.open('http://www.facebook.com/share.php?u=http://green.html'))"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal9">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal9" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立臺灣大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/9.JPG' width=350 />
+         <br/>
+         <br/>
+         臺大校園廣闊，號稱總面積約台灣島的百分之一。各校地有各種教學研究功能，長期以來的經營開發，也造就獨具特色的校園風貌、豐富的植被景觀。
+
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_9" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(9)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/10.jpg' /></a><span class='name'>No.10</span>
+            <div id='12' >
+            <p>國立高雄應用科技大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal10">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal10" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立高雄應用科技大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/10.jpg' width=350 />
+         <br/>
+         <br/>
+         國立高雄應用科技大學，是中華民國一所綜合型的國立科技大學之一，前身為1963年所創建的高雄工專，曾為三大工專之一。該校目前發展定位為「親產業優質大學」，致力於培育技職人才、研發實用產業技術。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_10" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(10)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/11.jpg' /></a><span class='name'>No.11</span>
+            <div id='13' >
+            <p>中國文化大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal11">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal11" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是中國文化大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/11.jpg' width=350 />
+         <br/>
+         <br/>
+         中國文化大學位於台北市近郊，毗臨陽明山國家公園，海拔約410公尺，足臨台北關渡平原，俯瞰淡水河與台北港；自台北市士林、北投區向山麓遠眺，即可見文大校舍建築，為台北顯著地標。
+
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_11" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(11)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/12.JPG' /></a><span class='name'>No.12</span>
+            <div id='14' >
+            <p>國立清華大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal12">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal12" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立清華大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/12.JPG' width=350 />
+         <br/>
+         <br/>
+         清華之名源自於「水清木華」，代表清華迷人的校園與美麗的校景。本校成立於民國前一年，校址為北平西郊的清華園，最初名稱為「清華學堂」。民國三年冬天，梁啟超先生來校演講，引述易經中「天行健君子以自強不息，地勢坤君子以厚德載物」勉勵同學以君子自期，自此以後「自強不息，厚德載物」便成為清華的校訓。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_12" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(12)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+         
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/13.jpg' /></a><span class='name'>No.13</span>
+            <div id='15' >
+            <p>國立政治大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal13">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal13" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立政治大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/13.jpg' width=350 />
+         <br/>
+         <br/>
+         政大位於台北市南區，東傍指南山麓，西濱景美溪，南鄰抱子林高地，北臨秀明路，校區大門位於指南路，風景秀麗，環境幽美，交通便利。「一山二河五橋九院十景」為政大特色。學校發展以活化校園為理念，結合「人、學、山、水、築」五項元素，所建構出最具代表意義的政大十景，景緻不僅優美，更富含人文韻味。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_13" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(13)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#";>
+            <img src='school/14.jpg' /></a><span class='name'>No.14</span>
+            <div id='16' >
+            <p>國立高雄大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal14">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal14" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立高雄大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/14.jpg' width=350 />
+         <br/>
+         <br/>
+         「國立高雄大學」是一所「全新」設立，「非」改名、「非」技職體系改制，「 2000年成立」的大學。校區面積82.5公頃，地處熱帶季風氣候區，校園內以植物園式的植栽綠化，有歐洲庭園式廣場、自然森林式散步休閒廣場及親水空間，成為開放式校園，沒有圍牆的森林大學。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_14" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(14)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+
+         <div class="school">
+            <div class='item-block'><a href="#">
+            <img src='school/15.jpg' /></a><span class='name'>No.15</span>
+            <div id='17'  >
+            <p>國立交通大學</p>
+            </div>
+            </div>
+            <div class="fbshare"><a href="javascript:share();"><img title="share" src="assets/img/icon-fb.png"></a></div>
+            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal15">我要投票</button>
+         </div>
+
+         <!-- 模?框（Modal） -->
+         <div class="modal fade" id="myModal15" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true">
+            
+            <div class="modal-dialog">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <button type="button" class="close" 
+                        data-dismiss="modal" aria-hidden="true">
+                           &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                        您投的是國立交通大學
+                     </h4>
+                  </div>
+
+                  <div class="modal-body">　　
+                  <img src='school/15.jpg' width=350 />
+         <br/>
+         <br/>
+         1896年，清末郵船部大臣盛宣懷創辦南洋公學，是為交通大學前身，並為中國新式大學之一。國府遷台後，在美國校友會的支持與前校長淩鴻勛先生的領導下，1958年於新竹建校。從最初僅有的電子研究所，發展為今日首屈一指的研究型綜合大學，交大的成長與茁壯，正是全體師生校友齊心努力的結果。
+                  </div>
+         <label>
+         &nbsp&nbsp&nbsp&nbsp EMAIL &nbsp&nbsp<input type="mail" id="user_mail_15" value=""></label><br />
+         <br/>
+         &nbsp&nbsp&nbsp&nbsp&nbsp 投票原因：
+         <select name="what">
+         <option value="one">我愛母校
+         <option value="two">校園太美
+         <option value="three">校地大
+         </select>
+         <br/>  
+                  <div class="modal-footer">
+                     <button type="button" class="btn btn-default" 
+                        data-dismiss="modal">關閉
+                     </button>
+                     <button type="button" class="btn btn-primary" onclick="Vote(15)">
+                        投出神聖一票
+                     </button>
+                  </div>
+               </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+         </div>
+      
+      </div>    
+   </div>
+   <footer>
+      <div align="center"><hr />
+      <div><font color="000000"><b> Copyright © 2015 國立高雄大學資管系 All Rights Reserved. </div>
+      <div> <a href="http://www.im.nuk.edu.tw/" target="_blank"><img src='assets/img/icon-nuk.png' alt="NUK icon" style='width:1em' /> <font color="000000">國立高雄大學資訊管理系</a> | <a href="https://www.facebook.com/nukimcamp" target="_blank"><img src='assets/img/icon-fb.png' alt="Facebook Icon" style='width:1em' /> <font color="000000">Facebook 粉絲專頁</a> | <a href="mailto:20143rdnukimcamp@gmail.com"><img src='assets/img/icon-connect.png' alt="Mail Icon" style='width:1em'/> <font color="000000">連絡我們</a></div>
+      </div>
+  </footer>
+</div>
+</body>
+</html>
+                                                           
